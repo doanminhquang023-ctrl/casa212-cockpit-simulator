@@ -1,7 +1,6 @@
 import random
 import math
 import pygame
-import numpy as np
 
 # -----------------------------
 # CÀI ĐẶT CHUNG
@@ -301,7 +300,7 @@ def draw_outside_scene(mode_name):
     mountain_base_y = 280
     if cfg["storm"]:
         mountain_base_y = 300
-    elif cfg["fog"]:
+    elif cfg["fog_alpha"] > 100:  # FIX: Kiểm tra fog_alpha thay vì "fog"
         mountain_base_y = 290
     
     pts1 = [
